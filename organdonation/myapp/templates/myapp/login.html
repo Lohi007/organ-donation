@@ -1,0 +1,457 @@
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--	<title>Organ Danation</title>-->
+<!--	<link rel="stylesheet" type="text/css" href="slide navbar style.css">-->
+<!--<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">-->
+<!--<style>-->
+
+<!--    body{-->
+<!--	margin: 0;-->
+<!--	padding: 0;-->
+<!--	display: flex;-->
+<!--	justify-content: center;-->
+<!--	align-items: center;-->
+<!--	min-height: 100vh;-->
+<!--	font-family: 'Jost', sans-serif;-->
+<!--	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);-->
+<!--}-->
+<!--.main{-->
+<!--	width: 350px;-->
+<!--	height: 500px;-->
+<!--	background: red;-->
+<!--	overflow: hidden;-->
+<!--	background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/ cover;-->
+<!--	border-radius: 10px;-->
+<!--	box-shadow: 5px 20px 50px #000;-->
+<!--}-->
+<!--#chk{-->
+<!--	display: none;-->
+<!--}-->
+<!--.signup{-->
+<!--	position: relative;-->
+<!--	width:100%;-->
+<!--	height: 100%;-->
+<!--}-->
+<!--label{-->
+<!--	color: #fff;-->
+<!--	font-size: 1.3em;-->
+<!--	justify-content: center;-->
+<!--	display: flex;-->
+<!--	margin: 60px;-->
+<!--	font-weight: bold;-->
+<!--	cursor: pointer;-->
+<!--	transition: .5s ease-in-out;-->
+<!--}-->
+<!--input{-->
+<!--	width: 60%;-->
+<!--	height: 20px;-->
+<!--	background: #e0dede;-->
+<!--	justify-content: center;-->
+<!--	display: flex;-->
+<!--	margin: 20px auto;-->
+<!--	padding: 10px;-->
+<!--	border: none;-->
+<!--	outline: none;-->
+<!--	border-radius: 5px;-->
+<!--}-->
+<!--button{-->
+<!--	width: 60%;-->
+<!--	height: 40px;-->
+<!--	margin: 10px auto;-->
+<!--	justify-content: center;-->
+<!--	display: block;-->
+<!--	color: #fff;-->
+<!--	background: #573b8a;-->
+<!--	font-size: 1em;-->
+<!--	font-weight: bold;-->
+<!--	margin-top: 20px;-->
+<!--	outline: none;-->
+<!--	border: none;-->
+<!--	border-radius: 5px;-->
+<!--	transition: .2s ease-in;-->
+<!--	cursor: pointer;-->
+<!--}-->
+<!--button:hover{-->
+<!--	background: #6d44b8;-->
+<!--}-->
+<!--.login{-->
+<!--	height: 460px;-->
+<!--	background: #eee;-->
+<!--	border-radius: 60% / 10%;-->
+<!--	transform: translateY(-180px);-->
+<!--	transition: .8s ease-in-out;-->
+<!--}-->
+<!--.login label{-->
+<!--	color: #573b8a;-->
+<!--	transform: scale(.6);-->
+<!--}-->
+
+<!--#chk:checked ~ .login{-->
+<!--	transform: translateY(-500px);-->
+<!--}-->
+<!--#chk:checked ~ .login label{-->
+<!--	transform: scale(1);-->
+<!--}-->
+<!--#chk:checked ~ .signup label{-->
+<!--	transform: scale(.6);-->
+<!--}-->
+
+<!--</style>-->
+
+<!--</head>-->
+<!--<body>-->
+<!--	<div class="main">-->
+<!--		<input type="checkbox" id="chk" aria-hidden="true">-->
+
+<!--			<div class="signup">-->
+<!--				<form action="{% url 'homepage' %}" method="POST">-->
+<!--    {% csrf_token %}>-->
+
+<!--                    <label>Login</label>-->
+<!--                    <label for="Selecttype">Are you a Donor/Recipient</label>-->
+<!--            <select id="Selecttype" name="Selecttype">-->
+<!--                <option value="Donor">Donor</option>-->
+<!--                <option value="Recipient">Recipient</option>-->
+<!--            </select>-->
+<!--                    <input type="text" name="uname" placeholder="Name" required="">-->
+<!--					<input type="text" name="age" placeholder="Age" required="">-->
+<!--                    <label for="bloodtype">BloodType</label>-->
+<!--            <select id="bloodtype" name="bloodtype">-->
+<!--                <option value="A1">A+</option>-->
+<!--                <option value="A2">A-</option>-->
+<!--                <option value="B1">B+</option>-->
+<!--                <option value="B-">B-</option>-->
+<!--                <option value="AB1">AB+</option>-->
+<!--                <option value="AB2">AB+</option>-->
+<!--                <option value="O1">O+</option>-->
+<!--                <option value="O2">O-</option>-->
+<!--            </select>-->
+<!--                    <input type="text" name="mobno" placeholder="Mobile Number" required="">-->
+<!--					<input type="password" name="pwd" placeholder="Password" required="">-->
+<!--					<input type="text" name="locn" placeholder="Location(City, Country)" required="">-->
+<!--					<input type="text" name="hname" placeholder="Hospital Name" required="">-->
+<!--					 <label for="organavail">Organ Available</label>-->
+<!--            <select id="organavail" name="organavail">-->
+<!--                <option value="Heart">Heart</option>-->
+<!--                <option value="Liver">Liver</option>-->
+<!--                <option value="Kidney">Kidney</option>-->
+<!--                <option value="Lungs">Lungs</option>-->
+<!--                <option value="Pancreas">Pancreas</option>-->
+<!--            </select>-->
+<!--                     <label for="chronicdisease">Chronic Disease</label>-->
+<!--            <select id="chronicdisease" name="chronicdisease">-->
+<!--                <option value="None">None</option>-->
+<!--                <option value="Diabetes">Diabetes</option>-->
+<!--                <option value="Hypertension">Hypertension</option>-->
+<!--                <option value="Asthama">Asthama</option>-->
+<!--                <option value="Heartd">Heart Disease</option>-->
+<!--                <option value="Kidneyd">Kidney Disease</option>-->
+<!--                <option value="Liverd">Liver Disease</option>-->
+<!--            </select>-->
+<!--                    <label for="infectious">Infectious Disease</label>-->
+<!--            <select id="infectious" name="infectious">-->
+<!--                <option value="Nonei">None</option>-->
+<!--                <option value="HIV">HIV</option>-->
+<!--                <option value="HepatitisB">Hepatitis B</option>-->
+<!--                <option value="HepatitisC">Hepatitis C</option>-->
+<!--                <option value="Tuberculosis">Tuberculosis</option>-->
+<!--                <option value="Syphilis">Syphilis</option>-->
+<!--            </select>-->
+<!--                    <label for="cancerhistory">Cancer History</label>-->
+<!--            <select id="cancerhistory" name="cancerhistory">-->
+<!--                <option value="Nonec">None</option>-->
+<!--                <option value="breastcancer">Breast Cancer</option>-->
+<!--                <option value="livercancer">Liver Cancer</option>-->
+<!--                <option value="lungcancer">Lung Cancer</option>-->
+<!--                <option value="coloncancer">Colon Cancer</option>-->
+<!--                <option value="prostate">Prostate Cancer</option>-->
+<!--                <option value="leukemia">Leukemia</option>-->
+<!--            </select>-->
+<!--                     <label for="medications">Current Medications</label>-->
+<!--            <select id="medications" name="medications">-->
+<!--                <option value="Nonem">None</option>-->
+<!--                <option value="Immunosuppressants">Immunosuppressants</option>-->
+<!--                <option value="BPmed">Blood Pressue Meds</option>-->
+<!--                <option value="Diabeticmed">Diabetic Medicationr</option>-->
+<!--                <option value="Painkillers">Pain Killers</option>-->
+<!--                <option value="Antibiotic">Antibiotic</option>-->
+<!--                <option value="Cholestrolmed">Cholestrol Med</option>-->
+<!--            </select>-->
+
+
+<!--                    	<button>Login</button>-->
+<!--				</form>-->
+<!--			</div>-->
+<!--<br>-->
+<!--<br>-->
+<!--<br>-->
+<!--<br>-->
+<!--			<div class="login">-->
+<!--&lt;!&ndash;				<form>&ndash;&gt;-->
+<!--&lt;!&ndash;					<label for="chk" aria-hidden="true">Login</label>&ndash;&gt;-->
+<!--&lt;!&ndash;					<input type="email" name="email" placeholder="Email" required="">&ndash;&gt;-->
+<!--&lt;!&ndash;					<input type="password" name="pswd" placeholder="Password" required="">&ndash;&gt;-->
+<!--&lt;!&ndash;					<button>Login</button>&ndash;&gt;-->
+<!--&lt;!&ndash;				</form>&ndash;&gt;-->
+<!--			</div>-->
+<!--	</div>-->
+<!--</body>-->
+<!--</html>-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Organ Donation & Sign-In</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            display: flex;
+            min-height: 100vh;
+            background: url('/static/images/fgf.jpg') no-repeat center center/cover;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navbar {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar .menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .navbar .menu a:hover {
+            background-color: #007BFF;
+        }
+
+        .main-container {
+            display: flex;
+            flex: 1;
+            margin-top: 54px;
+        }
+
+        .left-section {
+            flex: 1;
+            padding: 20px;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.7); /* Dark background for left section */
+         }
+
+        .left-section h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .left-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .left-section li {
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: #ffeb3b;
+        }
+
+        .right-section {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+            width: 350px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            font-weight: bold;
+            color: #36454F;
+            margin: 10px 0 5px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 8px;
+            outline: none;
+            font-size: 16px;
+            transition: 0.3s;
+            background: rgba(255, 255, 255, 0.3);
+            color: #000;
+        }
+
+        input::placeholder {
+            color: black;
+        }
+
+        input:hover, select:hover {
+            background: white;
+            color: black;
+        }
+
+        select {
+            background-color: rgba(255, 255, 255, 0.3);
+            border: 1px solid #ccc;
+            appearance: none;
+        }
+
+        select option {
+            background-color: #222;
+            color: #fff;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #0437F2;
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #1e6b3a;
+        }
+
+        @media (max-width: 768px) {
+            .main-container {
+                flex-direction: column;
+            }
+            .left-section, .right-section {
+                width: 100%;
+                padding: 10px;
+            }
+            .container {
+                width: 90%;
+                margin: 20px auto;
+            }
+            .navbar .menu a {
+                font-size: 14px;
+                padding: 6px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="menu">
+            <a href="/home">Home</a>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="left-section">
+            <h2>Live Updates on Our Organ Donation Initiative</h2>
+            <ul id="live-updates">
+            </ul>
+        </div>
+
+        <div class="right-section">
+            <div class="container">
+                <form action="{% url 'login' %}" method="POST">
+                    {% csrf_token %}
+                    <h1>Sign-In</h1>
+                    <label for="usertype">User Type</label>
+                    <select id="usertype" name="usertype" required>
+                        <option value="Recipient">Recipient</option>
+                        <option value="Blockchain">Blockchain</option>
+                    </select>
+                    <label for="first">User Name</label>
+                    <input type="text" id="first" name="first" required placeholder="Enter your username" />
+                    <label for="pwd">Password</label>
+                    <input type="password" id="pwd" name="pwd" required placeholder="Enter your password" />
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const updatesList = document.getElementById('live-updates');
+        const newUpdates = [
+            "New: Organ Donation Camp on 20th July!",
+            "Urgent: Blood Drive for Type O+ starting tomorrow.",
+            "Success: 3 more lives saved through transplants today!",
+            "Volunteer Training Session on 22nd July.",
+            "Important: Changes to organ donation process, please check your profile."
+        ];
+
+        let updateIndex = 0;
+        let displayedUpdates = 0; // Keep track of how many updates are currently displayed
+
+        function addUpdate() {
+            if (updateIndex < newUpdates.length) {
+                const newUpdateItem = document.createElement('li');
+                newUpdateItem.textContent = newUpdates[updateIndex];
+                newUpdateItem.style.color = '#ffeb3b';
+
+                if (displayedUpdates < 3) {
+                    updatesList.appendChild(newUpdateItem);
+                    displayedUpdates++;
+                } else {
+                    updatesList.removeChild(updatesList.firstChild);
+                    updatesList.appendChild(newUpdateItem);
+                }
+                updateIndex++;
+            } else {
+                updateIndex = 0;
+            }
+        }
+
+        setInterval(addUpdate, 5000);
+    </script>
+</body>
+</html>

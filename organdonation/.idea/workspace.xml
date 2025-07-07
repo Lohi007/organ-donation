@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0cac2d7f-bc12-492f-8aed-9b6da646e4cf" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="organdonation" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="2sI87pdPhiEZiuODsuZr9Nv9UFs" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/organ donation" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0cac2d7f-bc12-492f-8aed-9b6da646e4cf" name="Default Changelist" comment="" />
+      <created>1738131563581</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1738131563581</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="442" y="163" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1741808010027">
+      <screen x="0" y="0" width="1366" height="720" />
+    </state>
+    <state x="442" y="163" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.720@0.0.1366.720" timestamp="1741808010027" />
+    <state x="463" y="115" key="FileChooserDialogImpl" timestamp="1741802707609">
+      <screen x="0" y="0" width="1366" height="720" />
+    </state>
+    <state x="463" y="115" key="FileChooserDialogImpl/0.0.1366.720@0.0.1366.720" timestamp="1741802707609" />
+    <state x="384" y="184" key="com.intellij.ide.util.TipDialog" timestamp="1741802584640">
+      <screen x="0" y="0" width="1366" height="720" />
+    </state>
+    <state x="384" y="184" key="com.intellij.ide.util.TipDialog/0.0.1366.720@0.0.1366.720" timestamp="1741802584640" />
+  </component>
+</project>

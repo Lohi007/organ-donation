@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About Us - Organ Donation</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('{% static "images/about-bg.jpg" %}') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 80px 20px;
+            text-align: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .about-section {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 50px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            color: #000000;
+        }
+
+        .team-section {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .team-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .team-member {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            width: 230px;
+            color: white;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+
+        .team-member img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid white;
+        }
+
+        h1, h2 {
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Overlay -->
+<div class="overlay">
+    <h1>About Us</h1>
+    <p>Committed to saving lives through organ donation and medical innovation.</p>
+</div>
+
+<!-- About Section -->
+<div class="about-section">
+    <h2>Our Mission</h2>
+    <p>We strive to connect organ donors with those in need through a secure and efficient platform. Our goal is to improve healthcare accessibility and promote awareness of organ donation.</p>
+    <p>"ಒಬ್ಬ ಅಂಗಾಂಗ ದಾನಿ ಎಂಟು ಜೀವಗಳನ್ನು ಉಳಿಸಬಹುದು. ಹೀರೋ ಆಗಿರಿ; ದಾನಿಯಾಗಿರಿ."<br>
+    "ಜೀವನದ ಉಡುಗೊರೆಯನ್ನು ನೀಡಿ - ನಿಮ್ಮ ಅಂಗಗಳನ್ನು ದಾನ ಮಾಡಿ."<br>
+    "ಇಂದಿನ ನಿಮ್ಮ ನಿರ್ಧಾರವು ನಾಳೆಯ ಜೀವವನ್ನು ಉಳಿಸಬಹುದು."<br>
+    "ಜೀವನ ಒಂದು ಉಡುಗೊರೆ. ಅಂಗಾಂಗ ದಾನದ ಮೂಲಕ ಅದನ್ನು ಹರಡಿ."<br>
+    "ನೀವು ಉಳಿಸುವ ಜೀವಗಳು ನಿಮ್ಮ ಪರಂಪರೆಯಾಗಿರಲಿ."</p>
+</div>
+
+<!-- Team Section -->
+<div class="team-section">
+    <h2>Meet Our Team</h2>
+    <div class="team-container">
+        <div class="team-member">
+            <img src="{% static 'images/personimg.png' %}" alt="Jayanth">
+            <h3>Jayanth</h3>
+            <p>Founder & Director</p>
+        </div>
+        <div class="team-member">
+            <img src="{% static 'images/personimg.png' %}" alt="Stephan">
+            <h3>Stephan</h3>
+            <p>Medical Advisor</p>
+        </div>
+        <div class="team-member">
+            <img src="{% static 'images/personimg.png' %}" alt="Lohith">
+            <h3>Lohith</h3>
+            <p>Technology Lead</p>
+        </div>
+        <div class="team-member">
+            <img src="{% static 'images/personimg.png' %}" alt="Lohit">
+            <h3>Lohit</h3>
+            <p>Community Outreach</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+

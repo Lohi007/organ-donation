@@ -1,0 +1,188 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OTP Verification | Blockchain Organ Donation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+     * {
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    display: flex;
+    background: linear-gradient(to right, rgba(255,255,255,0.85), rgba(255,255,255,0.85)),
+                url("{% static 'images/fgf.jpg' %}") no-repeat center center/cover;
+    color: #333;
+}
+
+.left-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px;
+}
+
+.left-side h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #2d3436;
+}
+
+.left-side p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #444;
+}
+
+.right-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 20px;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 3px solid #81ecec;
+}
+
+.otp-box {
+    width: 100%;
+    max-width: 400px;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #2d3436;
+    text-align: center;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background-color: #00b894;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #019875;
+}
+
+ul {
+    color: #d63031;
+    padding: 0;
+    list-style: none;
+}
+
+p.success {
+    color: #00b894;
+    text-align: center;
+}
+
+
+    </style>
+    {% if otp_verified %}
+    <script>
+        // Redirect to homepage after 2 seconds
+        setTimeout(() => {
+            window.location.href = "/home";
+        }, 2000);
+    </script>
+    {% endif %}
+</head>
+<body>
+    <div class="left-side">
+        <h1>Blockchain Based <br>Organ Donation & Transplantation</h1>
+        <p>
+            Join our secure and transparent platform to make a real difference. Powered by blockchain,
+            our portal ensures traceability, integrity, and trust in every organ match. Whether you are a donor
+            or in need, you're part of a life-saving ecosystem.
+        </p>
+        <p>
+            Let's build a healthier future—together.
+        </p>
+    </div>
+
+    <div class="right-side">
+        <!-- Logo at the top -->
+        <img src="{% static 'images/logogo.png'%}" alt="Company Logo" class="logo">
+
+        <div class="otp-box">
+            <h2>OTP Verification</h2>
+
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+            {% if otp_verified %}
+                <p class="success">OTP verification successful for {{ email }}. Redirecting...</p>
+
+            {% elif otp_sent %}
+                <form method="POST">
+                    {% csrf_token %}
+                    <p>OTP sent to <strong>{{ email }}</strong>.</p>
+                    <input type="text" name="otp" placeholder="Enter OTP" required>
+                    <button type="submit" name="verify_otp">Verify OTP</button>
+                </form>
+
+            {% else %}
+                <form method="POST">
+                    {% csrf_token %}
+                    <input type="email" name="email" placeholder="Enter your Email" required>
+                    <button type="submit" name="send_otp">Send OTP</button>
+                </form>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

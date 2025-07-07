@@ -1,0 +1,446 @@
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--	<title>Organ Danation</title>-->
+<!--	<link rel="stylesheet" type="text/css" href="slide navbar style.css">-->
+<!--<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">-->
+<!--<style>-->
+
+<!--    body{-->
+<!--	margin: 0;-->
+<!--	padding: 0;-->
+<!--	display: flex;-->
+<!--	justify-content: center;-->
+<!--	align-items: center;-->
+<!--	min-height: 100vh;-->
+<!--	font-family: 'Jost', sans-serif;-->
+<!--	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);-->
+<!--}-->
+<!--.main{-->
+<!--	width: 350px;-->
+<!--	height: 500px;-->
+<!--	background: red;-->
+<!--	overflow: hidden;-->
+<!--	background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/ cover;-->
+<!--	border-radius: 10px;-->
+<!--	box-shadow: 5px 20px 50px #000;-->
+<!--}-->
+<!--#chk{-->
+<!--	display: none;-->
+<!--}-->
+<!--.signup{-->
+<!--	position: relative;-->
+<!--	width:100%;-->
+<!--	height: 100%;-->
+<!--}-->
+<!--label{-->
+<!--	color: #fff;-->
+<!--	font-size: 1.3em;-->
+<!--	justify-content: center;-->
+<!--	display: flex;-->
+<!--	margin: 60px;-->
+<!--	font-weight: bold;-->
+<!--	cursor: pointer;-->
+<!--	transition: .5s ease-in-out;-->
+<!--}-->
+<!--input{-->
+<!--	width: 60%;-->
+<!--	height: 20px;-->
+<!--	background: #e0dede;-->
+<!--	justify-content: center;-->
+<!--	display: flex;-->
+<!--	margin: 20px auto;-->
+<!--	padding: 10px;-->
+<!--	border: none;-->
+<!--	outline: none;-->
+<!--	border-radius: 5px;-->
+<!--}-->
+<!--button{-->
+<!--	width: 60%;-->
+<!--	height: 40px;-->
+<!--	margin: 10px auto;-->
+<!--	justify-content: center;-->
+<!--	display: block;-->
+<!--	color: #fff;-->
+<!--	background: #573b8a;-->
+<!--	font-size: 1em;-->
+<!--	font-weight: bold;-->
+<!--	margin-top: 20px;-->
+<!--	outline: none;-->
+<!--	border: none;-->
+<!--	border-radius: 5px;-->
+<!--	transition: .2s ease-in;-->
+<!--	cursor: pointer;-->
+<!--}-->
+<!--button:hover{-->
+<!--	background: #6d44b8;-->
+<!--}-->
+<!--.login{-->
+<!--	height: 460px;-->
+<!--	background: #eee;-->
+<!--	border-radius: 60% / 10%;-->
+<!--	transform: translateY(-180px);-->
+<!--	transition: .8s ease-in-out;-->
+<!--}-->
+<!--.login label{-->
+<!--	color: #573b8a;-->
+<!--	transform: scale(.6);-->
+<!--}-->
+
+<!--#chk:checked ~ .login{-->
+<!--	transform: translateY(-500px);-->
+<!--}-->
+<!--#chk:checked ~ .login label{-->
+<!--	transform: scale(1);-->
+<!--}-->
+<!--#chk:checked ~ .signup label{-->
+<!--	transform: scale(.6);-->
+<!--}-->
+
+<!--</style>-->
+
+<!--</head>-->
+<!--<body>-->
+<!--	<div class="main">-->
+<!--		<input type="checkbox" id="chk" aria-hidden="true">-->
+
+<!--			<div class="signup">-->
+<!--				<form action="{% url 'homepage' %}" method="POST">-->
+<!--    {% csrf_token %}>-->
+
+<!--                    <label>Login</label>-->
+<!--                    <label for="Selecttype">Are you a Donor/Recipient</label>-->
+<!--            <select id="Selecttype" name="Selecttype">-->
+<!--                <option value="Donor">Donor</option>-->
+<!--                <option value="Recipient">Recipient</option>-->
+<!--            </select>-->
+<!--                    <input type="text" name="uname" placeholder="Name" required="">-->
+<!--					<input type="text" name="age" placeholder="Age" required="">-->
+<!--                    <label for="bloodtype">BloodType</label>-->
+<!--            <select id="bloodtype" name="bloodtype">-->
+<!--                <option value="A1">A+</option>-->
+<!--                <option value="A2">A-</option>-->
+<!--                <option value="B1">B+</option>-->
+<!--                <option value="B-">B-</option>-->
+<!--                <option value="AB1">AB+</option>-->
+<!--                <option value="AB2">AB+</option>-->
+<!--                <option value="O1">O+</option>-->
+<!--                <option value="O2">O-</option>-->
+<!--            </select>-->
+<!--                    <input type="text" name="mobno" placeholder="Mobile Number" required="">-->
+<!--					<input type="password" name="pwd" placeholder="Password" required="">-->
+<!--					<input type="text" name="locn" placeholder="Location(City, Country)" required="">-->
+<!--					<input type="text" name="hname" placeholder="Hospital Name" required="">-->
+<!--					 <label for="organavail">Organ Available</label>-->
+<!--            <select id="organavail" name="organavail">-->
+<!--                <option value="Heart">Heart</option>-->
+<!--                <option value="Liver">Liver</option>-->
+<!--                <option value="Kidney">Kidney</option>-->
+<!--                <option value="Lungs">Lungs</option>-->
+<!--                <option value="Pancreas">Pancreas</option>-->
+<!--            </select>-->
+<!--                     <label for="chronicdisease">Chronic Disease</label>-->
+<!--            <select id="chronicdisease" name="chronicdisease">-->
+<!--                <option value="None">None</option>-->
+<!--                <option value="Diabetes">Diabetes</option>-->
+<!--                <option value="Hypertension">Hypertension</option>-->
+<!--                <option value="Asthama">Asthama</option>-->
+<!--                <option value="Heartd">Heart Disease</option>-->
+<!--                <option value="Kidneyd">Kidney Disease</option>-->
+<!--                <option value="Liverd">Liver Disease</option>-->
+<!--            </select>-->
+<!--                    <label for="infectious">Infectious Disease</label>-->
+<!--            <select id="infectious" name="infectious">-->
+<!--                <option value="Nonei">None</option>-->
+<!--                <option value="HIV">HIV</option>-->
+<!--                <option value="HepatitisB">Hepatitis B</option>-->
+<!--                <option value="HepatitisC">Hepatitis C</option>-->
+<!--                <option value="Tuberculosis">Tuberculosis</option>-->
+<!--                <option value="Syphilis">Syphilis</option>-->
+<!--            </select>-->
+<!--                    <label for="cancerhistory">Cancer History</label>-->
+<!--            <select id="cancerhistory" name="cancerhistory">-->
+<!--                <option value="Nonec">None</option>-->
+<!--                <option value="breastcancer">Breast Cancer</option>-->
+<!--                <option value="livercancer">Liver Cancer</option>-->
+<!--                <option value="lungcancer">Lung Cancer</option>-->
+<!--                <option value="coloncancer">Colon Cancer</option>-->
+<!--                <option value="prostate">Prostate Cancer</option>-->
+<!--                <option value="leukemia">Leukemia</option>-->
+<!--            </select>-->
+<!--                     <label for="medications">Current Medications</label>-->
+<!--            <select id="medications" name="medications">-->
+<!--                <option value="Nonem">None</option>-->
+<!--                <option value="Immunosuppressants">Immunosuppressants</option>-->
+<!--                <option value="BPmed">Blood Pressue Meds</option>-->
+<!--                <option value="Diabeticmed">Diabetic Medicationr</option>-->
+<!--                <option value="Painkillers">Pain Killers</option>-->
+<!--                <option value="Antibiotic">Antibiotic</option>-->
+<!--                <option value="Cholestrolmed">Cholestrol Med</option>-->
+<!--            </select>-->
+
+
+<!--                    	<button>Login</button>-->
+<!--				</form>-->
+<!--			</div>-->
+<!--<br>-->
+<!--<br>-->
+<!--<br>-->
+<!--<br>-->
+<!--			<div class="login">-->
+<!--&lt;!&ndash;				<form>&ndash;&gt;-->
+<!--&lt;!&ndash;					<label for="chk" aria-hidden="true">Login</label>&ndash;&gt;-->
+<!--&lt;!&ndash;					<input type="email" name="email" placeholder="Email" required="">&ndash;&gt;-->
+<!--&lt;!&ndash;					<input type="password" name="pswd" placeholder="Password" required="">&ndash;&gt;-->
+<!--&lt;!&ndash;					<button>Login</button>&ndash;&gt;-->
+<!--&lt;!&ndash;				</form>&ndash;&gt;-->
+<!--			</div>-->
+<!--	</div>-->
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Registration Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: url('{% static "images/maybe.jpg" %}') no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .main {
+            width: 100%;
+            max-width: 850px;
+            background: rgba(255, 255, 255, 0.1); /* Slightly transparent white */
+            border-radius: 20px;
+            backdrop-filter: blur(15px); /* Subtle blur effect */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            color: #eee; /* Light text color for contrast */
+            border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
+        }
+
+        nav {
+            width: 100%;
+            background: rgba(39, 65, 83, 0.3); /* Slightly transparent nav background */
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            padding: 15px 25px; /* Adjusted padding */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        nav .logo {
+            font-size: 22px; /* Slightly larger logo */
+            font-weight: bold;
+            color: #a7ffeb; /* Teal-ish logo text */
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        nav .logo img {
+            width: 40px;
+            height: auto;
+            border-radius: 50%;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #ccc;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #a7ffeb;
+        }
+
+        .main h2 {
+            color: white;
+            margin-bottom: 25px;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        .form-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .form-group {
+            width: calc(50% - 10px);
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 6px;
+            font-weight: 500;
+            color: #ddd; /* Slightly lighter label */
+        }
+
+        input, select {
+            padding: 12px 16px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.05); /* Slightly transparent input background */
+            color: white;
+            font-size: 16px;
+            outline: none;
+            backdrop-filter: blur(8px);
+            box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.1);
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+
+        input::placeholder {
+            color: #aaa;
+        }
+
+        input:focus, select:focus {
+            border-color: #a7ffeb;
+            box-shadow: 0 0 10px rgba(167, 255, 235, 0.5);
+        }
+
+        select option {
+            color: #333;
+            background-color: #f8f8f8;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 14px;
+            border-radius: 12px;
+            border: none;
+            background-color: #00b894; /* Vibrant button */
+            color: white;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 20px;
+            transition: background-color 0.15s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #00ffc8; /* Lighter hover color */
+            color: black;
+        }
+
+        @media (max-width: 600px) {
+            .form-container {
+                flex-direction: column;
+            }
+            .form-group {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <img src="{% static 'images/logogo.png' %}" alt="Logo" style="height: 40px; vertical-align: middle; margin-right: 10px;">
+            Organ Donation
+        </div>
+        <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/login">Login</a></li>
+            </ul>
+    </nav>
+
+    <div class="main">
+        <br><br>
+        <h2>Registration Form</h2>
+        <form action="{% url 'registerrept' %}" method="POST">
+            {% csrf_token %}
+            <div class="form-container">
+                <div class="form-group">
+                    <label for="rname">User Name</label>
+                    <input type="text" name="rname" placeholder="Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="rage">Age</label>
+                    <input type="text" name="rage" placeholder="Age" required>
+                </div>
+                <div class="form-group">
+                    <label for="rbloodtype">Blood Type</label>
+                    <select id="rbloodtype" name="rbloodtype">
+                        <option value="">Select</option>
+                        <option value="A1">A+</option>
+                        <option value="A2">A-</option>
+                        <option value="B1">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB1">AB+</option>
+                        <option value="AB2">AB-</option>
+                        <option value="O1">O+</option>
+                        <option value="O2">O-</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="rmobno">Mobile No</label>
+                    <input type="text" name="rmobno" placeholder="Mobile Number" required>
+                </div>
+                <div class="form-group">
+                    <label for="rpwd">Password</label>
+                    <input type="password" name="rpwd" placeholder="Password" required>
+                </div>
+                <div class="form-group">
+                    <label for="rlocn">Location</label>
+                    <input type="text" name="rlocn" placeholder="Location (City, Country)" required>
+                </div>
+                <div class="form-group">
+                    <label for="rhname">Hospital Name</label>
+                    <input type="text" name="rhname" placeholder="Hospital Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="organneed">Organ Needed</label>
+                    <select id="organneed" name="organneed">
+                        <option value="">Select</option>
+                        <option value="Heart">Heart</option>
+                        <option value="Liver">Liver</option>
+                        <option value="Kidney">Kidney</option>
+                        <option value="Lungs">Lungs</option>
+                        <option value="Pancreas">Pancreas</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
